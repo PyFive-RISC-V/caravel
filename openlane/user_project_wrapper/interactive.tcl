@@ -14,17 +14,18 @@ set ::env(FP_DEF_TEMPATE) $script_dir/../../def/user_project_wrapper_empty.def
 
 apply_def_template
 
-add_macro_placement mprj 1150 1700 N
+add_macro_placement mprj 650 320.88 N
 
 manual_macro_placement f
 
 set ::env(_SPACING) 1.6
 set ::env(_WIDTH) 3
 
-set power_domains [list {vccd1 vssd1} {vccd2 vssd2} {vdda1 vssa1} {vdda2 vssa2}]
+set power_domains [list {vccd1 vssd1 1} {vccd2 vssd2 0} {vdda1 vssa1 0} {vdda2 vssa2 0}]
 
 set ::env(_VDD_NET_NAME) vccd1
 set ::env(_GND_NET_NAME) vssd1
+set ::env(_WITH_STRAPS) 1
 set ::env(_V_OFFSET) 14
 set ::env(_H_OFFSET) $::env(_V_OFFSET)
 set ::env(_V_PITCH) 180
@@ -35,6 +36,7 @@ set ::env(_H_PDN_OFFSET) 0
 foreach domain $power_domains {
 	set ::env(_VDD_NET_NAME) [lindex $domain 0]
 	set ::env(_GND_NET_NAME) [lindex $domain 1]
+	set ::env(_WITH_STRAPS)  [lindex $domain 2]
 	gen_pdn
 
 	set ::env(_V_OFFSET) \
