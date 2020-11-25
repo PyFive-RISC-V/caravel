@@ -1,0 +1,3 @@
+[submodule "openlane/pyfive_top"]
+	path = openlane/pyfive_top
+	url = https://github.com/PyFive-RISC-V/pyfive_top_202011.git
