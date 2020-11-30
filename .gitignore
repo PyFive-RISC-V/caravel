@@ -1,0 +1,7 @@
+*.def
+*.gds
+*.mag
+*.lef
+*.gz
+*.spice
+runs
