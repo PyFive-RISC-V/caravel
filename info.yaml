@@ -10,8 +10,8 @@ project:
   project_name: "Caravel"
   tags: 
     - "Open MPW"
-	- "USB"
-	- "RISC-V"
+    - "USB"
+    - "RISC-V"
   category: "Test Harness"
   top_level_netlist: "verilog/rtl/caravel.v"
   user_level_netlist: "verilog/gl/user_project_wrapper.v"
